@@ -1,6 +1,6 @@
 {
   "name": "ac-rating-icon",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Add icons to the AtCoder standings table according to ratings.",
   "author": "subaru <contact@su8ru.dev>",
   "bugs": {
