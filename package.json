@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Add icons to the AtCoder standings table according to ratings.",
   "author": "subaru <contact@su8ru.dev>",
+  "bugs": {
+    "url": "https://github.com/su8ru/ac-rating-icon/issues"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {

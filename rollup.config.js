@@ -8,10 +8,17 @@ const userScriptBanner = `
 // @version     ${packageJson.version}
 // @description ${packageJson.description}
 // @author      ${packageJson.author}
+// @supportURL  ${packageJson.bugs.url}
 // @license     ${packageJson.license}
 // @match       https://atcoder.jp/*
 // @exclude     https://atcoder.jp/*/json
-// ==/UserScript==`.trim();
+// ==/UserScript==
+
+// ================================================
+//   View source code before bundling on GitHub:
+//   https://github.com/su8ru/ac-rating-icon
+// ================================================ 
+`.trim();
 
 export default [
   {
