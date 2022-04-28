@@ -18,7 +18,7 @@ export default [
     input: "src/index.ts",
     output: {
       banner: userScriptBanner,
-      file: "dist/dist.js",
+      file: "dist/bundle.js",
     },
     plugins: [typescript()],
   },
