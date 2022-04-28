@@ -1,5 +1,9 @@
 # ac-rating-icon
 
+[![GreasyFork](https://img.shields.io/badge/dynamic/json?color=990000&label=GreasyFork&query=total_installs&suffix=%20installs&url=https%3A%2F%2Fgreasyfork.org%2Fscripts%2F444140.json)](https://greasyfork.org/ja/scripts/444140-ac-rating-icon)
+![Version](https://img.shields.io/github/package-json/v/su8ru/ac-rating-icon)
+![License](https://img.shields.io/github/license/su8ru/ac-rating-icon)
+
 AtCoder のコンテスト順位表に、レーティングに対応したアイコンを追加するユーザースクリプトです。
 
 ![sample](/docs/sample.png)
