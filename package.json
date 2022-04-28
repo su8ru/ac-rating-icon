@@ -1,0 +1,26 @@
+{
+  "name": "ac-rating-icon",
+  "version": "0.1.0",
+  "description": "Add icons to the AtCoder standings table according to ratings.",
+  "author": "subaru <contact@su8ru.dev>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "run-p prettier eslint",
+    "lint:fix": "run-s prettier:fix eslint:fix",
+    "prettier": "prettier --check '*.{json,js}' 'src/**/*.{js,ts}'",
+    "prettier:fix": "prettier --write '*.{json,js}' 'src/**/*.{js,ts}'",
+    "eslint": "eslint --max-warnings=0 src",
+    "eslint:fix": "eslint --fix src"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-typescript": "^3.0.0",
+    "notios": "^0.1.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  }
+}
