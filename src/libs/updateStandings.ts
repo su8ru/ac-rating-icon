@@ -14,6 +14,7 @@ const updateStandings = (): void => {
       if (
         isElementWithVue(userElement) &&
         isVueWithUserInfo(userElement.__vue__) &&
+        !userElement.__vue__.u.IsTeam &&
         !userElement.querySelector("img") &&
         !userElement.querySelector("svg")
       ) {
