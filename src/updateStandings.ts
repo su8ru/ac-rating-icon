@@ -1,12 +1,8 @@
 import { isElementWithVue } from "types/ElementWithVue";
 import { isVueWithUserInfo } from "types/VueWithUserInfo";
 import icons from "libs/icons";
-
-const createIconElement = (iconSvg: string): SVGElement => {
-  const template = document.createElement("template");
-  template.innerHTML = iconSvg;
-  return template.content.firstChild as SVGElement;
-};
+import createIconElement from "libs/createIconElement";
+import ratingToRank from "libs/ratingToRank";
 
 const updateStandings = (): void => {
   Array.from(document.querySelectorAll(".standings-username > a.username")).map(
@@ -18,8 +14,7 @@ const updateStandings = (): void => {
         !userElement.querySelector("img") &&
         !userElement.querySelector("svg")
       ) {
-        const rating = userElement.__vue__.u.Rating;
-        const rank = rating > 2800 ? 0 : ((rating % 400) / 100) | 0;
+        const rank = ratingToRank(userElement.__vue__.u.Rating);
         const iconElement = createIconElement(icons[rank]);
         // set style
         const colorClassName = userElement.querySelector("span")?.className;

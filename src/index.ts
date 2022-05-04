@@ -1,4 +1,4 @@
-import updateStandings from "libs/updateStandings";
+import updateStandings from "updateStandings";
 
 const observeTable = () => {
   updateStandings();
