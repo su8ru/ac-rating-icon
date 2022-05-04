@@ -1,6 +1,5 @@
 import createIconElement from "libs/createIconElement";
-import icons from "libs/icons";
-import ratingToRank from "libs/ratingToRank";
+import ratingToRankSvg from "libs/ratingToRankSvg";
 
 const updateProfile = (): void => {
   const _tableElements = document.querySelectorAll("table");
@@ -14,7 +13,7 @@ const updateProfile = (): void => {
     ].cells[1] as HTMLTableCellElement;
     const spanElement = tdElement.querySelector("span") as HTMLSpanElement;
     const rating = +spanElement.innerText || 0;
-    const iconElement = createIconElement(icons[ratingToRank(rating)]);
+    const iconElement = createIconElement(ratingToRankSvg(rating));
 
     const colorClassName = spanElement.className;
     iconElement.setAttribute("class", colorClassName);

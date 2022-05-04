@@ -1,8 +1,7 @@
 import { isElementWithVue } from "types/ElementWithVue";
 import { isVueWithUserInfo } from "types/VueWithUserInfo";
-import icons from "libs/icons";
 import createIconElement from "libs/createIconElement";
-import ratingToRank from "libs/ratingToRank";
+import ratingToRankSvg from "libs/ratingToRankSvg";
 
 const updateStandings = (): void => {
   Array.from(document.querySelectorAll(".standings-username > a.username")).map(
@@ -14,8 +13,9 @@ const updateStandings = (): void => {
         !userElement.querySelector("img") &&
         !userElement.querySelector("svg")
       ) {
-        const rank = ratingToRank(userElement.__vue__.u.Rating);
-        const iconElement = createIconElement(icons[rank]);
+        const iconElement = createIconElement(
+          ratingToRankSvg(userElement.__vue__.u.Rating)
+        );
         // set style
         const colorClassName = userElement.querySelector("span")?.className;
         iconElement.setAttribute("class", colorClassName ?? "");
