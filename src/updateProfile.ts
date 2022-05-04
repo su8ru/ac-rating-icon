@@ -18,8 +18,12 @@ const updateProfile = (): void => {
 
     const colorClassName = spanElement.className;
     iconElement.setAttribute("class", colorClassName);
-    iconElement.style.verticalAlign = "text-bottom";
-    iconElement.style.marginRight = "2px";
+    Object.assign(iconElement.style, {
+      width: "14px",
+      height: "14px",
+      verticalAlign: "text-bottom",
+      marginRight: "4px",
+    });
 
     tdElement.insertBefore(iconElement, spanElement);
 
@@ -44,11 +48,11 @@ const updateProfile = (): void => {
         const bigIconElement = iconElement.cloneNode(true) as SVGElement;
         bigIconElement.id = "acri-profile-big-icon";
         Object.assign(bigIconElement.style, {
-          width: "48px",
-          height: "48px",
+          width: "40px",
+          height: "40px",
           position: "absolute",
-          top: "-10px",
-          left: "34px",
+          top: "-6px",
+          left: "40px",
         });
         divElement.style.position = "relative";
         divElement.insertBefore(bigIconElement, canvasElement);

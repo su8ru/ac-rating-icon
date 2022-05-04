@@ -19,8 +19,12 @@ const updateStandings = (): void => {
         // set style
         const colorClassName = userElement.querySelector("span")?.className;
         iconElement.setAttribute("class", colorClassName ?? "");
-        iconElement.style.verticalAlign = "text-bottom";
-        iconElement.style.marginRight = "2px";
+        Object.assign(iconElement.style, {
+          width: "14px",
+          height: "14px",
+          verticalAlign: "text-bottom",
+          marginRight: "4px",
+        });
         // insert
         userElement.insertBefore(
           iconElement,
