@@ -1,4 +1,5 @@
 import updateStandings from "updateStandings";
+import updateProfile from "updateProfile";
 
 const observeTable = () => {
   updateStandings();
@@ -19,4 +20,8 @@ if (/standings(\/virtual)?\/?/.test(document.location.href)) {
     new MutationObserver(() => {
       if (loaded()) observeTable();
     }).observe(loadingElement, { attributes: true });
+}
+
+if (/users\/([^/]+)\/?/.test(document.location.href)) {
+  updateProfile();
 }
