@@ -24,17 +24,53 @@ const updateProfile = (): void => {
     tdElement.insertBefore(iconElement, spanElement);
 
     if (index === 0) {
-      const canvasElement = document.querySelector("canvas#ratingStatus");
-      const divElement = canvasElement?.parentElement;
-      if (!canvasElement || !divElement) return;
-      const bigIconElement = iconElement.cloneNode(true) as SVGElement;
-      bigIconElement.style.width = "48px";
-      bigIconElement.style.height = "48px";
-      divElement.style.position = "relative";
-      bigIconElement.style.position = "absolute";
-      bigIconElement.style.top = "-10px";
-      bigIconElement.style.left = "34px";
-      divElement.insertBefore(bigIconElement, canvasElement);
+      const updateBigIcon = () => {
+        // === config ====
+        const checkboxElement = document.getElementById(
+          "acri-profile-icon-config"
+        ) as HTMLInputElement | null;
+        if (!checkboxElement) return;
+        const showProfileIcon: boolean = checkboxElement.checked;
+        const svgElement = document.getElementById("acri-profile-big-icon");
+        if (!showProfileIcon) {
+          if (svgElement) svgElement.remove();
+          return;
+        }
+        // ==== create element ====
+        if (svgElement) return;
+        const canvasElement = document.getElementById("ratingStatus");
+        const divElement = canvasElement?.parentElement;
+        if (!canvasElement || !divElement) return;
+        const bigIconElement = iconElement.cloneNode(true) as SVGElement;
+        bigIconElement.id = "acri-profile-big-icon";
+        Object.assign(bigIconElement.style, {
+          width: "48px",
+          height: "48px",
+          position: "absolute",
+          top: "-10px",
+          left: "34px",
+        });
+        divElement.style.position = "relative";
+        divElement.insertBefore(bigIconElement, canvasElement);
+      };
+
+      const buttonGroupElement = document.querySelector(
+        ".col-md-9 .btn-text-group"
+      ) as HTMLElement | null;
+      if (!buttonGroupElement) return;
+      buttonGroupElement.insertAdjacentHTML(
+        "beforeend",
+        `<span class="divider"></span>
+        <input type="checkbox" id="acri-profile-icon-config" checked />
+        <label for="acri-profile-icon-config">[ac-rating-icon] Show Profile Icon</label>
+        `
+      );
+      const checkboxElement = document.getElementById(
+        "acri-profile-icon-config"
+      ) as HTMLInputElement | null;
+      if (!checkboxElement) return;
+      checkboxElement.addEventListener("change", updateBigIcon);
+      updateBigIcon();
     }
   });
 };
